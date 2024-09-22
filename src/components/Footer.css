@@ -1,0 +1,21 @@
+.footer-container{
+    background-color: rgb(158, 60, 255);
+    color: white;
+    padding: 12px 0 6px 0;
+    height: 100px;
+}
+.footer-container p{
+    font-size: 14px;
+    line-height: 2;
+    font-weight: bold;
+}
+.footer-container a{
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+    font-weight: 400;
+}
+.footer-container a:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 900;
+}

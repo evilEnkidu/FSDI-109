@@ -1,0 +1,54 @@
+.admin{
+    background-color: #e6ede9;
+    padding-top: 50px;
+    
+}
+.admin h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    background-color: rgb(255, 164, 178);
+    padding: 30px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.admin .flex-parent{
+    display: flex;
+    gap: 20px;
+    padding-top: 40px;
+}
+.admin .flex-parent .products{
+    flex: 3;
+   
+
+}
+.admin .flex-parent .coupons{
+    flex:2;
+    
+}
+.admin h3{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    font-weight: 200;
+    color: #175465;
+}
+.admin .form {
+    border: 1px solid #c9c9cd;
+    border-radius: 6px;
+    width: 400px;
+    padding: 12px;
+    background-color: white;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin .form div {
+    margin-bottom: 12px;
+}
+.admin .form .controls {
+    margin-top: 18px;
+    text-align: center;
+}

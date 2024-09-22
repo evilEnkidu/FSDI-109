@@ -1,0 +1,42 @@
+.home h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    padding-top: 10px;
+    font-size: 48px;
+    font-weight: lighter;
+}
+.home p{
+    letter-spacing: 1px;
+    
+}
+.home{
+    min-height: 600px;   
+    padding: 20px;
+}
+.main-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.main-flex .text-container{
+    text-align: justify;
+    width: 450px;
+}
+.main-flex .text-container h4{
+    text-align: center;
+    padding-bottom: 10px;
+    color: black;
+}
+.main-flex .text-container p{
+    color: rgb(104, 104, 104);
+}
+.main-flex .image-container .main-image{
+    width: 480px;
+    border-radius: 15px;
+}
+.home .btn i{
+    margin-left: 5px;
+}

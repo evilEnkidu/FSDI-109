@@ -1,0 +1,21 @@
+.catalog{
+    min-width: 600px;
+}
+.catalog .catalog-title{
+    color: rgb(255, 131, 131);
+    font-weight: 900;
+    background-color: hsl(64, 100%, 85%);
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-top: 3px dotted rgb(249, 186, 255);
+}
+
+.catalog .product h3{
+    color: rgb(219, 146, 50);
+    font-weight: 200;
+}
+.catalog .filters button {
+    margin: 6px 12px;
+}
