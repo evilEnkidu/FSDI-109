@@ -7,7 +7,7 @@
     text-align: center;
     color: rgb(255, 255, 255);
     font-style: italic;
-    background-color: rgb(255, 164, 178);
+    background-color: rgb(255, 111, 132);
     padding: 30px;
     border-radius: 5px;
     display: inline-block;
@@ -16,16 +16,16 @@
     display: flex;
     gap: 20px;
     padding-top: 40px;
+    padding-bottom: 50px;
 }
 .admin .flex-parent .products{
-    flex: 3;
-   
-
+    flex: 1;
 }
 .admin .flex-parent .coupons{
-    flex:2;
+    flex:1;
     
 }
+
 .admin h3{
     padding-top: 40px;
     padding-bottom: 40px;

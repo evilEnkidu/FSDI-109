@@ -25,3 +25,11 @@
     color: rgb(252, 102, 127);
     background-color: white;
 }
+.user-welcome{
+    color: white;
+    padding: 10px 20px;
+    font-weight: 200;
+}
+.user-name{
+    font-weight: bold;
+}

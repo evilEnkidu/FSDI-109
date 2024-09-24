@@ -12,30 +12,46 @@ function Contact() {
     const copy = { ...message };
     copy[name] = text;
     setMessage(copy);
+    console.log(copy);
   }
 
   return (
     <div className="contact page">
-      <h1>Do you want to say hello?</h1>
-      <p>Use the form bellow to get in touch</p>
+      <h2>Do you want to say hello?</h2>
+      <p>Use this form to get in touch!</p>
       <div className="form">
         <div>
           <label htmlFor="" className="form-label">
-            Name
+            Your name
           </label>
-          <input type="text" className="form-control" onBlur={handleMessage} />
+          <input
+            name="name"
+            type="text"
+            className="form-control"
+            onBlur={handleMessage}
+          />
         </div>
         <div>
           <label htmlFor="" className="form-label">
-            Email
+            Your e-mail
           </label>
-          <input type="email" className="form-control" onBlur={handleMessage} />
+          <input
+            name="email"
+            type="email"
+            className="form-control"
+            onBlur={handleMessage}
+          />
         </div>
         <div>
           <label htmlFor="" className="form-label">
-            Name
+            Message
           </label>
-          <input type="text" className="form-control" onBlur={handleMessage} />
+          <textarea
+            name="message"
+            className="form-control"
+            onBlur={handleMessage}
+            rows={4}
+          />
         </div>
         <div className="controls">
           <button className="btn btn-primary">Send Message</button>

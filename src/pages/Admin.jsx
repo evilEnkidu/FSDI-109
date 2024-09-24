@@ -1,16 +1,34 @@
 import "./Admin.css";
 import { useState } from "react";
+import { useContext } from "react";
+import DataContext from "../state/DataContext";
 
 function Admin() {
+  const { user } = useContext(DataContext);
   const [coupon, setCoupon] = useState({
     code: "",
     discount: "",
   });
+  var dynamicText = document.querySelector(".dynamic-text");
+
+  function couponAlert(couponCode) {
+    var newCoupon = couponCode;
+    dynamicText.textContent = "The coupon " + newCoupon + " has been created!";
+    dynamicText.style.backgroundColor = "#36c927";
+  }
+  function productAlert(productName) {
+    var newProduct = productName;
+    dynamicText.textContent = "The product " + newProduct + " has been added!";
+    dynamicText.style.backgroundColor = "#cf47f3";
+  }
 
   function saveCoupon() {
     console.log(coupon);
+    couponAlert(coupon.code);
   }
-
+  function saveProduct() {
+    productAlert(product.name);
+  }
   function handleCoupon(e) {
     const text = e.target.value;
     const name = e.target.name;
@@ -31,7 +49,7 @@ function Admin() {
   */
 
   const [product, setProduct] = useState({
-    title: "",
+    name: "",
     price: "",
     image: "",
     category: "",
@@ -40,7 +58,6 @@ function Admin() {
   function handleProduct(e) {
     const text = e.target.value;
     const name = e.target.name;
-
     const copy = { ...product };
     copy[name] = text;
     setProduct(copy);
@@ -48,7 +65,9 @@ function Admin() {
 
   return (
     <div className="admin page">
-      <h1>Hello $ADMIN$.</h1>
+      <h1 className="dynamic-text">
+        You are currently logged in as {user.name}!
+      </h1>
       <div className="flex-parent">
         <div className="products">
           <h3>Manage your products</h3>
@@ -62,7 +81,7 @@ function Admin() {
                 className="form-control"
                 id="formGroupExampleInput"
                 placeholder="Name"
-                onBlur={handleCoupon}
+                onBlur={handleProduct}
                 name="name"
               />
             </div>
@@ -75,7 +94,7 @@ function Admin() {
                 className="form-control"
                 id="formGroupExampleInput"
                 placeholder="Category"
-                onBlur={handleCoupon}
+                onBlur={handleProduct}
                 name="category"
               />
             </div>
@@ -88,7 +107,8 @@ function Admin() {
                 className="form-control"
                 id="formGroupExampleInput"
                 placeholder="Image URL"
-                onBlur={handleCoupon}
+                onBlur={handleProduct}
+                name="image"
               />
             </div>
             <div className="mb-3">
@@ -100,11 +120,14 @@ function Admin() {
                 className="form-control"
                 id="formGroupExampleInput2"
                 placeholder="Price"
-                onBlur={handleCoupon}
+                onBlur={handleProduct}
+                name="price"
               />
             </div>
             <div>
-              <button className="btn btn-outline-dark">Add</button>
+              <button className="btn btn-outline-dark" onClick={saveProduct}>
+                Add
+              </button>
             </div>
           </div>
         </div>
@@ -126,7 +149,7 @@ function Admin() {
             </div>
             <div className="mb-3">
               <label htmlFor="formGroupExampleInput2" className="form-label">
-                Discount:
+                Discount percentage:
               </label>
               <input
                 type="number"

@@ -1,5 +1,6 @@
 .catalog{
     min-width: 600px;
+    margin-bottom: 30px;
 }
 .catalog .catalog-title{
     color: rgb(255, 131, 131);

@@ -68,7 +68,11 @@ function Navbar() {
             </button>
           </form>
 
-          {user && <div className="navbar-text">Welcome, {user.name}!</div>}
+          {user && (
+            <div className="user-welcome">
+              Welcome, <span className="user-name">{user.name}!</span>
+            </div>
+          )}
         </div>
       </div>
     </nav>
