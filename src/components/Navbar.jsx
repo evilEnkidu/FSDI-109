@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 function Navbar() {
   // Access the user from the context
-  const { user } = useContext(DataContext);
+  const { user, cart } = useContext(DataContext);
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -73,6 +73,11 @@ function Navbar() {
               Welcome, <span className="user-name">{user.name}!</span>
             </div>
           )}
+
+          <Link className="btn btn-outline-light ms-2" to="/cart">
+            <span class="badge badge-warning">{cart.length}</span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </Link>
         </div>
       </div>
     </nav>

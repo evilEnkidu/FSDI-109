@@ -10,6 +10,7 @@ import Contact from './pages/Contact.jsx'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js"
 import GlobalProvider from './state/GlobalProvider.jsx';
+import Cart from './pages/Cart.jsx';
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/About' element={<About></About>}></Route>
         <Route path='/admin' element={<Admin></Admin>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/cart' element={<Cart></Cart>}/>
       </Routes>
       
       <Footer></Footer>

@@ -1,13 +1,19 @@
+import { useContext } from "react";
 import { useState } from "react";
 import "./Product.css";
 import QuantityPicker from "./QuantityPicker";
+import DataContext from "../state/DataContext";
 
 function Product(props) {
   // Declare the quantity state at the Product component level
   const [quantity, setQuantity] = useState(1);
 
+  const addToCart = useContext(DataContext).addProductToCart;
+
   function add() {
-    console.log("add to cart");
+    console.log("added to cart");
+    let prod = { ...props.data, quantity: quantity };
+    addToCart(prod);
   }
 
   // This function updates the quantity

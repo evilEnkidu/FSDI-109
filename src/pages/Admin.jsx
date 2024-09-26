@@ -1,6 +1,5 @@
 import "./Admin.css";
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import DataContext from "../state/DataContext";
 
 function Admin() {
@@ -9,44 +8,44 @@ function Admin() {
     code: "",
     discount: "",
   });
+  const [allCoupons, setAllCoupons] = useState([]); // Initialize as an array
+  const [allProducts, setAllProducts] = useState([]);
+
   var dynamicText = document.querySelector(".dynamic-text");
 
   function couponAlert(couponCode) {
-    var newCoupon = couponCode;
-    dynamicText.textContent = "The coupon " + newCoupon + " has been created!";
+    dynamicText.textContent = "The coupon " + couponCode + " has been created!";
     dynamicText.style.backgroundColor = "#36c927";
   }
+
   function productAlert(productName) {
-    var newProduct = productName;
-    dynamicText.textContent = "The product " + newProduct + " has been added!";
+    dynamicText.textContent = "The product " + productName + " has been added!";
     dynamicText.style.backgroundColor = "#cf47f3";
   }
 
   function saveCoupon() {
     console.log(coupon);
     couponAlert(coupon.code);
+    let copy = [...allCoupons]; // Copy the current coupons array
+    copy.push(coupon); // Add the new coupon
+    setAllCoupons(copy); // Update the state with the new array
   }
+
   function saveProduct() {
     productAlert(product.name);
+    console.log(product); // Logs the current product data
+    let copy = [...allProducts];
+    copy.push(product);
+    setAllProducts(copy);
   }
+
   function handleCoupon(e) {
     const text = e.target.value;
     const name = e.target.name;
-    console.log(name, text);
-    // When using states and arrays:
-    // copy, modify copy, set the copy
-    const copy = { ...coupon }; // Use `coupon` instead of `copy`
-    copy[name] = text;
-    setCoupon(copy);
+    const copy = { ...coupon }; // Copy the current coupon object
+    copy[name] = text; // Update the field
+    setCoupon(copy); // Set the updated coupon state
   }
-
-  /* Finish the product form, 
-  create the product state var
-  create the handleProduct fn
-  set the onBlur and name to input fields
-  create the saveProduct that console logs the product
-  call the fn on the click event of the save button
-  */
 
   const [product, setProduct] = useState({
     name: "",
@@ -58,9 +57,9 @@ function Admin() {
   function handleProduct(e) {
     const text = e.target.value;
     const name = e.target.name;
-    const copy = { ...product };
-    copy[name] = text;
-    setProduct(copy);
+    const copy = { ...product }; // Copy the current product object
+    copy[name] = text; // Update the field
+    setProduct(copy); // Set the updated product state
   }
 
   return (
@@ -130,7 +129,17 @@ function Admin() {
               </button>
             </div>
           </div>
+          <div className="itemsForSale">
+            {allProducts.map((prod) => (
+              <li className="prod">
+                <img src={prod.image} alt="" className="product-image" />
+                <h5>{prod.name}</h5>
+                <label>${prod.price}</label>
+              </li>
+            ))}
+          </div>
         </div>
+
         <div className="coupons">
           <h3>Manage your coupons</h3>
           <div className="form">
@@ -165,6 +174,14 @@ function Admin() {
                 Create
               </button>
             </div>
+            <ul>
+              <h5>Current Codes:</h5>
+              {allCoupons.map((cp, index) => (
+                <li key={index}>
+                  {cp.code} - {cp.discount}%
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
