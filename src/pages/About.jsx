@@ -18,6 +18,95 @@ function About() {
           theory, Gaia theory, or deep ecology.
         </p>
       </div>
+      <h3 className="invite">
+        See what our clients got to say about our products!
+      </h3>
+      <div className="flex-container">
+        <div class="container">
+          <div class="testimonial-box">
+            <div class="testimonial">
+              <i class="fas fa-quote-right"></i>
+              <span class="testimonial-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                dignissimos blanditiis similique quod quaerat et recusandae
+                tempora. Animi error quaerat labore cum! Ratione veritatis culpa
+                illo quo molestiae minima repudiandae.
+              </span>
+              <div class="testimonial-user">
+                <img
+                  src="https://randomuser.me/api/portraits/women/21.jpg"
+                  alt="user-img"
+                  class="user-img"
+                />
+                <div class="user-info">
+                  <span class="user-name">Username</span>
+                  <div class="user-job-details">
+                    <span class="user-job">Job</span>
+                    <div class="line"></div>
+                    <span class="user-post">Post</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="testimonial-box">
+            <div class="testimonial">
+              <i class="fas fa-quote-right"></i>
+              <span class="testimonial-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                dignissimos blanditiis similique quod quaerat et recusandae
+                tempora. Animi error quaerat labore cum! Ratione veritatis culpa
+                illo quo molestiae minima repudiandae.
+              </span>
+              <div class="testimonial-user">
+                <img
+                  src="https://randomuser.me/api/portraits/women/17.jpg"
+                  alt="user-img"
+                  class="user-img"
+                />
+                <div class="user-info">
+                  <span class="user-name">Username</span>
+                  <div class="user-job-details">
+                    <span class="user-job">Job</span>
+                    <div class="line"></div>
+                    <span class="user-post">Post</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="testimonial-box">
+            <div class="testimonial">
+              <i class="fas fa-quote-right"></i>
+              <span class="testimonial-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                dignissimos blanditiis similique quod quaerat et recusandae
+                tempora. Animi error quaerat labore cum! Ratione veritatis culpa
+                illo quo molestiae minima repudiandae.
+              </span>
+              <div class="testimonial-user">
+                <img
+                  src="https://randomuser.me/api/portraits/women/10.jpg"
+                  alt="user-img"
+                  class="user-img"
+                />
+                <div class="user-info">
+                  <span class="user-name">Username</span>
+                  <div class="user-job-details">
+                    <span class="user-job"> Job </span>
+                    <div class="line"></div>
+                    <span class="user-post">Post</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -3,10 +3,10 @@ function Footer() {
   return (
     <div className="footer-container">
       <p>
-        Online rock store by{" "}
+        Online rock store by
         <i>
           <a href="https://github.com/evilEnkidu" target="_blank">
-            black magick dragon wizard gang
+            evilEnkidu
           </a>
         </i>
         . Brought to life through obscure esoteric Javascriptic means.

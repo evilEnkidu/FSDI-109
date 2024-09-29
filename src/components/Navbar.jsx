@@ -75,7 +75,9 @@ function Navbar() {
           )}
 
           <Link className="btn btn-outline-light ms-2" to="/cart">
-            <span class="badge badge-warning">{cart.length}</span>
+            <span class="badge badge-warning" id="item-number">
+              {cart.length}
+            </span>
             <i class="fa-solid fa-cart-shopping"></i>
           </Link>
         </div>

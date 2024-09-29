@@ -1,11 +1,11 @@
 .product{
     border: 2px solid #ffb5f6;
     border-radius: 4px;
-    padding: 10px;
-    height: 440px;
-    width: 300px;
+    padding: 25px;
+    height: 500px;
+    width: 400px;
     display: inline-block;
-    margin: 12px;
+    margin: 25px;
     background-color: white;
     z-index:999; 
     cursor: pointer; 
@@ -17,16 +17,20 @@
     border: 3px solid #f5ff9f;
     transform: scale(1.25);
     background-color: rgb(255, 255, 255);
+    
 }
+
 
 .product img{
     width: 280px;
+    border-radius: 10px;
 }
 
 .product .controls{
     display: flex;
     justify-content: space-around;
     margin-top: 4px;
+    padding-top: 20px;
 }
 .product button i{
     font-size: 20px;
@@ -40,8 +44,11 @@
     display:flex;
     justify-content: space-between;
     margin-bottom: 8px;
+    margin-top: 5px;
 }
 .total{
     font-weight: bold;
     color: #810072;
 }
+
+  

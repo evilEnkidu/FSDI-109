@@ -2,15 +2,24 @@
     min-width: 600px;
     margin-bottom: 30px;
 }
-.catalog .catalog-title{
-    color: rgb(255, 131, 131);
+
+.banner{
+    color: rgb(0, 0, 0);
     font-weight: 900;
-    background-color: hsl(64, 100%, 85%);
-    padding: 50px;
+    background-image: url(/public/images/background.webp);
+    padding: 25px;
     margin-top: 50px;
     margin-bottom: 25px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-top: 3px dotted rgb(249, 186, 255);
+    font-family:"Montserrat";
+   background-position: center;
+   background-size: cover;
+}
+.banner h3{
+    background-image: linear-gradient(to right, rgb(255, 230, 230), rgb(253, 241, 255));
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 48px;
 }
 
 .catalog .product h3{

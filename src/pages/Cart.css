@@ -7,7 +7,7 @@
 }
 
 .cart .prod-cart img {
-    height: 80px;
+    height: 120px;
 }
 
 .cart .prod-cart h5 {
@@ -34,4 +34,20 @@
 
 .cart .side {
     flex: 1;
+    padding-right: 50px;
+    padding-top: 60px;
+    
+}
+.total{
+    color: green;
+}
+#code{
+    
+    margin: 20px 20px;
+}
+.empty-cart-image{
+    height: 350px;
+    background-color: rgb(223, 223, 223);
+    border-radius: 1000px;
+    margin-top: 100px;
 }

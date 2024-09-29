@@ -178,7 +178,7 @@ function Admin() {
               <h5>Current Codes:</h5>
               {allCoupons.map((cp, index) => (
                 <li key={index}>
-                  {cp.code} - {cp.discount}%
+                  {cp.code} - {cp.discount}% Off
                 </li>
               ))}
             </ul>
