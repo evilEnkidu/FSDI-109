@@ -1,7 +1,7 @@
 import "./QuantityPicker.css";
 
 function QuantityPicker(props) {
-  // `quantity` is passed as a prop
+  // quantity is passed as a prop
   function handleIncrease() {
     let value = props.quantity + 1;
     props.onChange(value); // call parent function with new value

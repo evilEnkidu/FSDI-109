@@ -1,12 +1,29 @@
+import { useState, useEffect } from "react";
+import DataService, { categories, catalog } from "../services/DataService";
 import Product from "../components/Product";
 import "./Catalog.css";
-import { catalog as Products, categories } from "../services/DataService";
-import { useState } from "react";
 
 function Catalog() {
   const [filter, setFilter] = useState("All");
+  const [products, setProducts] = useState([]);
 
-  const filteredProducts = Products.filter((prod) => {
+  // Async function to load data
+  async function loadData() {
+    try {
+      let data = await new DataService().getProducts(); // API call
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching products, using local catalog:", error);
+      setProducts(catalog);
+    }
+  }
+
+  // on page load, do:
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const filteredProducts = products.filter((prod) => {
     if (filter === "All") return true;
 
     if (Array.isArray(prod.category)) {

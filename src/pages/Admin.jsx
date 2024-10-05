@@ -1,6 +1,7 @@
 import "./Admin.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import DataContext from "../state/DataContext";
+import DataService, { categories } from "../services/DataService";
 
 function Admin() {
   const { user } = useContext(DataContext);
@@ -8,8 +9,23 @@ function Admin() {
     code: "",
     discount: "",
   });
-  const [allCoupons, setAllCoupons] = useState([]); // Initialize as an array
+  const [allCoupons, setAllCoupons] = useState([]); // array initialization
   const [allProducts, setAllProducts] = useState([]);
+
+  async function loadData() {
+    const dataService = new DataService(); // New Instance
+    try {
+      let prods = await dataService.getProducts(); // Call getProducts
+      setAllProducts(prods);
+    } catch (error) {
+      console.error("Failed to fetch products:", error);
+      // error handling
+    }
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   var dynamicText = document.querySelector(".dynamic-text");
 
@@ -28,15 +44,20 @@ function Admin() {
     couponAlert(coupon.code);
     let copy = [...allCoupons]; // Copy the current coupons array
     copy.push(coupon); // Add the new coupon
-    setAllCoupons(copy); // Update the state with the new array
+    setAllCoupons(copy); // Update state with the new array
   }
 
-  function saveProduct() {
+  async function saveProduct() {
     productAlert(product.name);
     console.log(product); // Logs the current product data
+    let fixedProd = { ...product };
+    fixedProd.price = parseFloat(fixedProd.price);
     let copy = [...allProducts];
-    copy.push(product);
+    copy.push(fixedProd);
     setAllProducts(copy);
+    // send product to server
+    let resp = await DataService.saveProduct(fixedProd);
+    console.log(resp);
   }
 
   function handleCoupon(e) {

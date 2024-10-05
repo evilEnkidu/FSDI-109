@@ -5,7 +5,6 @@ import QuantityPicker from "./QuantityPicker";
 import DataContext from "../state/DataContext";
 
 function Product(props) {
-  // Declare the quantity state at the Product component level
   const [quantity, setQuantity] = useState(1);
 
   const addToCart = useContext(DataContext).addProductToCart;
@@ -16,7 +15,6 @@ function Product(props) {
     addToCart(prod);
   }
 
-  // This function updates the quantity
   function handleQuantityChange(qty) {
     console.log("Quantity Changed!", qty);
     setQuantity(qty);

@@ -1,3 +1,4 @@
+import axios from 'axios'
 export const catalog = [
     {
         "title" : "Emerald",
@@ -115,4 +116,19 @@ export const catalog = [
     
 ];
 
+
+
+class DataService {
+    async getProducts() {
+        let response = await axios.get("http://127.0.0.1:5000/api/products");
+        return response.data;
+    }
+
+    async saveProduct(product) {
+        let response = await axios.post("http://127.0.0.1:5000/api/products", product);
+        return response.data;
+    }
+}
+
 export const categories = [ "Non-precious", "Semi-Precious", "Precious", "Synthetic", "NFT", "Art", "Apparel", "Merchandise", "Books", "Coffee", "Membership Plans"]
+export default DataService;

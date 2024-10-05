@@ -4,7 +4,7 @@ import DataContext from "../state/DataContext";
 import "./Navbar.css";
 
 function Navbar() {
-  // Access the user from the context
+  // Access user from context
   const { user, cart } = useContext(DataContext);
 
   return (
